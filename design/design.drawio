@@ -1,0 +1,48 @@
+<mxfile host="65bd71144e">
+    <diagram id="ql4HoU2i8nfZ4x4Fctsf" name="类图">
+        <mxGraphModel dx="873" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Client" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="110" width="140" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&amp;lt;&amp;lt;stereotype1&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+                    <mxGeometry y="29" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="stereotype property 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+                    <mxGeometry y="54" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Model" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="110" width="140" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&amp;lt;&amp;lt;stereotype1&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5" vertex="1">
+                    <mxGeometry y="29" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="stereotype property 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5" vertex="1">
+                    <mxGeometry y="54" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Statistic" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="270" width="140" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&amp;lt;&amp;lt;stereotype1&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="8" vertex="1">
+                    <mxGeometry y="29" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="stereotype property 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="8" vertex="1">
+                    <mxGeometry y="54" width="140" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Client负载发送请求，Model负载加载数据和处理数据。&lt;br&gt;Statistic负载回收压测的结果" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="375" width="390" height="210" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="u_vaCxEH02Owi8gTt20L" name="压测流程">
+        <mxGraphModel dx="873" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
