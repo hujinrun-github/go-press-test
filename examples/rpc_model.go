@@ -7,6 +7,7 @@ import (
 	"os"
 	"reflect"
 	"strings"
+	"sync"
 
 	"github.com/hujinrun-github/go-press-test/constant"
 	model "github.com/hujinrun-github/go-press-test/model/interface"
@@ -14,7 +15,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-type JsonModel struct {
+type RpcModel struct {
 	model.BaseModel
 }
 
@@ -26,7 +27,7 @@ type JsonConfig struct {
 
 // input - JsonConfig
 // output - []string
-func (j *JsonModel) LoadData(c any) (any, constant.ErrorCode, error) {
+func (j *RpcModel) LoadData(c any) (any, constant.ErrorCode, error) {
 	rc, ok := c.(JsonConfig)
 	if !ok {
 		return nil, constant.ERR_TYPE_CONVERT, errors.New(fmt.Sprintf("type:%+v convert to %+v failed", reflect.TypeOf(c), reflect.TypeOf(JsonConfig{})))
@@ -81,4 +82,10 @@ func (j *JsonModel) LoadData(c any) (any, constant.ErrorCode, error) {
 	}
 
 	return nil, constant.ERR_UNKNOW, errors.New("unknow error")
+}
+
+func (r *RpcModel) Request(rsp chan model.IRequestResult, wg *sync.WaitGroup) constant.ErrorCode {
+
+	defer wg.Done()
+	return constant.ERR_CODE_SUCCESS
 }

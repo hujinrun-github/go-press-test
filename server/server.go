@@ -1,26 +1,29 @@
 package server
 
 import (
-	client "github.com/hujinrun-github/go-press-test/client/interface"
+	"context"
+	"sync"
+	"time"
+
 	"github.com/hujinrun-github/go-press-test/constant"
 	model "github.com/hujinrun-github/go-press-test/model/interface"
 	statistic "github.com/hujinrun-github/go-press-test/statistic/interface"
 )
 
 type Server struct {
-	c        client.IClient
+	// c        client.IClient
 	s        statistic.IStatistic
 	m        model.IModel
-	parallel int
+	parallel uint64
 }
 
 type Option func(*Server)
 
-func WithClient(c client.IClient) Option {
-	return func(s *Server) {
-		s.c = c
-	}
-}
+// func WithClient(c client.IClient) Option {
+// 	return func(s *Server) {
+// 		s.c = c
+// 	}
+// }
 
 func WithStatistic(st statistic.IStatistic) Option {
 	return func(s *Server) {
@@ -28,7 +31,7 @@ func WithStatistic(st statistic.IStatistic) Option {
 	}
 }
 
-func WithParallel(p int) Option {
+func WithParallel(p uint64) Option {
 	return func(s *Server) {
 		s.parallel = p
 	}
@@ -51,6 +54,28 @@ func NewServer(opts ...Option) *Server {
 	return s
 }
 
-func (s *Server) Run() constant.ErrorCode {
+func (s *Server) Run(ctx context.Context, datasource any) constant.ErrorCode {
+	ch := make(chan model.IRequestResult, 1000)
+	var (
+		swg sync.WaitGroup //发送数据完成
+		rwg sync.WaitGroup //接收数据完成
+	)
+
+	go s.s.ReceivingResults(ch, &rwg)
+
+	code := s.m.LoadData(datasource)
+	if code != constant.ERR_CODE_SUCCESS {
+		return code
+	}
+
+	for i := uint64(0); i < uint64(s.parallel); i++ {
+		swg.Add(1)
+		go s.m.Request(ch, &swg)
+	}
+
+	swg.Wait()
+	time.Sleep(1 * time.Millisecond)
+	close(ch)
+	rwg.Wait()
 	return constant.ERR_CODE_SUCCESS
 }
