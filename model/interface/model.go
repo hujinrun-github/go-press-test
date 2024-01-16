@@ -9,6 +9,6 @@ type IModel interface {
 type BaseModel struct {
 }
 
-func (b *BaseModel) LoadData(any) (any, constant.ErrorCode) {
-	return "", constant.ERR_CODE_SUCCESS
+func (b *BaseModel) LoadData(any) (any, constant.ErrorCode, error) {
+	return "", constant.ERR_CODE_SUCCESS, nil
 }

@@ -21,7 +21,7 @@ type IClient interface {
 	Request() constant.ErrorCode
 
 	// 加载数据
-	LoadData() constant.ErrorCode
+	Init() constant.ErrorCode
 }
 
 type BaseClient struct {
@@ -51,6 +51,6 @@ func (b *BaseClient) Request() constant.ErrorCode {
 	return constant.ERR_CODE_SUCCESS
 }
 
-func (b *BaseClient) LoadData() constant.ErrorCode {
+func (b *BaseClient) Init() constant.ErrorCode {
 	return constant.ERR_CODE_SUCCESS
 }
