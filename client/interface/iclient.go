@@ -53,7 +53,3 @@ func (b *BaseClient) GetStatus() constant.ErrorCode {
 func (b *BaseClient) Request() constant.ErrorCode {
 	return constant.ERR_CODE_SUCCESS
 }
-
-func (b *BaseClient) LoadData() constant.ErrorCode {
-	return constant.ERR_CODE_SUCCESS
-}
