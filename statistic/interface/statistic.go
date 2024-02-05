@@ -1,26 +1,25 @@
 package statistic
 
-type IStatistic interface {
-	AllStart()
-	AllEnd()
-	PerStart()
-	PerEnd()
-	Parse() string
-}
+import (
+	"sync"
 
-type IStatisticMeta interface {
-	GetCode() STATISTIC_RESULT
-	GetExtra() map[string][]byte
-	GetError() error
-	GetOriginRequest() any
-	GetRequestID() uint64
+	"github.com/hujinrun-github/go-press-test/constant"
+	model "github.com/hujinrun-github/go-press-test/model/interface"
+)
+
+type IStatistic interface {
+	Init() constant.ErrorCode
+	ReceivingResults(ch <-chan model.IRequestResult, wg *sync.WaitGroup)
+	CalculateData(model.IRequestResult)
 }
 
 type BaseStatistic struct {
 }
 
-func (bs *BaseStatistic) AllStart()             {}
-func (bs *BaseStatistic) AllEnd()               {}
-func (bs *BaseStatistic) PerStart(uint64)       {}
-func (bs *BaseStatistic) PerEnd(IStatisticMeta) {}
-func (bs *BaseStatistic) Parse() string         { return "" }
+func (b *BaseStatistic) Init() constant.ErrorCode {
+	return constant.ERR_CODE_SUCCESS
+}
+
+func (b *BaseStatistic) ReceivingResults(ch <-chan model.IRequestResult, wg *sync.WaitGroup) {}
+
+func (b *BaseStatistic) CalculateData(r model.IRequestResult) {}

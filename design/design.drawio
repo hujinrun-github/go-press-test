@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ql4HoU2i8nfZ4x4Fctsf" name="类图">
-        <mxGraphModel dx="873" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="882" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -38,10 +38,43 @@
         </mxGraphModel>
     </diagram>
     <diagram id="u_vaCxEH02Owi8gTt20L" name="压测流程">
-        <mxGraphModel dx="873" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="882" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-5" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="0iAFOIDJW84VXlxEpDTX-1" target="0iAFOIDJW84VXlxEpDTX-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-1" value="开始" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="70" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-7" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="0iAFOIDJW84VXlxEpDTX-4" target="0iAFOIDJW84VXlxEpDTX-6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-4" value="加载数据" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="140" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-9" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="0iAFOIDJW84VXlxEpDTX-6" target="0iAFOIDJW84VXlxEpDTX-8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-6" value="执行请求" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="210" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-11" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="0iAFOIDJW84VXlxEpDTX-8" target="0iAFOIDJW84VXlxEpDTX-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-8" value="收集请求的结果" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="280" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-13" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="0iAFOIDJW84VXlxEpDTX-10" target="0iAFOIDJW84VXlxEpDTX-12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-10" value="计算统计指标" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="350" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="0iAFOIDJW84VXlxEpDTX-12" value="结束" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="420" width="80" height="40" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
